@@ -35,7 +35,7 @@ body {
 .header-link {
   text-decoration: none;
   color: black;
-  margin-right: 8px;
+  /* margin-right: 8px; */
   font-size: 11px;
   font-weight: 500;
   text-align: center;
@@ -47,11 +47,18 @@ body {
 
 .header-container {
   display: flex;
+  position: fixed;
+  width: 100%;
+  z-index: 10000;
+  /* 最前面に固定 */
+
   justify-content: space-between;
   align-items: center;
-  padding: 0px 30px;
+  padding: 0px 20px;
   background-color: #fff;
   height: 70px;
+  box-sizing: border-box;
+
 }
 
 .header-left {
@@ -159,13 +166,38 @@ h2 {
   right: -200px;
 }
 
-/* Add 20260106 */
+/* ADD 20260108 */
+.hamburger-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  /* padding: 0; */
+  z-index: 9999;
+}
 
+.hamburger-btn span {
+  display: block;
+  /* width: 24px; */
+  width: 20px;
+  height: 2px;
+  margin: 5px 0;
+
+  background-color: #A2A2A4;
+  /* transform: translate(0, -50%); */
+  border-radius: 10px;
+  transition: top 0.2s, transform 0.2s, opacity 0.3s;
+}
+
+
+
+/* Add 20260106 */
 @media screen and (max-width: 767px) {
 
   .header-container {
-    padding: 10px 20px;
-    height: 50px;
+    padding: 0px 20px;
+    justify-content: space-between;
+
   }
 
   .button-logo-img {
@@ -175,10 +207,11 @@ h2 {
   }
 
   .main-visual-whole {
-    /* width: 100% !important; */
     width: 100vw !important;
+    /* padding-top: 20px; */
     height: auto !important;
     display: block !important;
+    z-index: 1;
 
   }
 
@@ -208,9 +241,11 @@ h2 {
 
   .visual-container {
     /* width: 100% !important; */
+    padding-top: 50px;
     width: 100vw !important;
     max-width: 100% !important;
     overflow-x: hidden !important;
+    z-index: 1
   }
 
   h2 {
@@ -235,8 +270,90 @@ h2 {
     line-height: 1.4;
   }
 
-  html, body {
+  html,
+  body {
     overflow-x: hidden !important;
+  }
+
+  /* ADD 20260108 */
+  .hamburger-btn {
+    /* width: 40px; 
+    height: 40px; */
+
+    width: 30px;
+    height: 35px;
+    display: block;
+
+    padding: 0;
+    z-index: 9999 !important;
+  }
+
+
+
+  .hamburger-btn.active span:nth-child(1) {
+    /* transform: translateY(9px) rotate(45deg); */
+    /* top: 50%; */
+    transform-origin: left center;
+    /* transform: translate(0, -50%) rotate(45deg); */
+    /* transform: rotate(45deg) scaleX(1.1); */
+    transform: rotate(45deg);
+
+  }
+
+  .hamburger-btn.active span:nth-child(2) {
+    transform: translate(20px, -50%);
+    opacity: 0;
+
+  }
+
+  .hamburger-btn.active span:nth-child(3) {
+    /* transform: translateY(-9px) rotate(-45deg); */
+    transform-origin: left center;
+    /* transform: translate(0, -50%) rotate(-45deg); */
+    /* transform: rotate(-45deg) scaleX(1.1); */
+    transform: rotate(-45deg);
+
+  }
+
+  .header-right {
+    overflow-y: scroll;
+    position: fixed !important;
+    width: 100vw !important;
+    height: calc(100vh - 50px);
+
+    /* display: none; */
+    flex-direction: column;
+    gap: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    /* padding: 20px; */
+    top: 70px;
+    right: 0;
+    width: 70%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+
+    transform: translateX(100%);
+    transition: transform 0.5s ease, opacity 0.5s;
+
+    z-index: 9998 !important;
+
+  }
+
+  .header-right.active {
+    display: flex;
+    transform: translateX(0);
+  }
+
+
+  .header-right.active .hl-top {
+    color: #fff;
+    font-size: 16px;
+    letter-spacing: 5px;
+  }
+
+  .header-right.active .hl-bottom {
+    color: #F79214;
+    font-size: 12px;
+    letter-spacing: 2px;
   }
 
 

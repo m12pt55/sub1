@@ -19,12 +19,52 @@
 
         </div>
 
+
+
         <div class="header-right">
 
             <a href="https://camp.potepan.com/content" class="header-link">
-                <p>CONTENT<br>学習内容</p>
+                <p>
+                    <span class="hl-top">CONTENT</span><br>
+                    <span class="hl-bottom">学習内容</span>
+                </p>
             </a>
             <a href="https://camp.potepan.com/interview" class="header-link">
+                <p>
+                    <span class="hl-top">INTERVIEW</span><br>
+                    <span class="hl-bottom">受験生の声</span>
+                </p>
+            </a>
+            <a href="https://camp.potepan.com/faq" class="header-link">
+                <p>
+                    <span class="hl-top">FAQ</span><br>
+                    <span class="hl-bottom">よくある質問</span>
+                </p>
+            </a>
+            <a href="https://camp.potepan.com/interview" class="header-link">
+                <p>
+                    <span class="hl-top">RECRUIT</span><br>
+                    <span class="hl-bottom">採用企業様へ</span>
+                </p>
+            </a>
+            <a href="https://camp.potepan.com/courses/free-under-29" class="header-link">
+                <p>
+                    <span class="hl-top">U29</span><br>
+                    <span class="hl-bottom">29歳以下の方へ</span>
+                </p>
+            </a>
+
+            <a href="https://camp.potepan.com/contact" class="button-rtop">
+                無料カウンセリング
+            </a>
+
+
+
+
+            <!-- <a href="https://camp.potepan.com/content" class="header-link">
+                <p>CONTENT<br>学習内容</p>
+            </a> -->
+            <!-- <a href="https://camp.potepan.com/interview" class="header-link">
                 <p>INTERVIEW<br>受講生の声</p>
             </a>
             <a href="https://camp.potepan.com/faq" class="header-link">
@@ -35,11 +75,14 @@
             </a>
             <a href="https://camp.potepan.com/courses/free-under-29" class="header-link">
                 <p>U29<br>29歳以下の方へ</p>
-            </a>
-            <a href="https://camp.potepan.com/contact" class="button-rtop">
-                無料カウンセリング
-            </a>
+            </a>-->
         </div>
+
+        <button class="hamburger-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </div>
 
     <main>
@@ -53,7 +96,7 @@
 
 
             <div class="main-content">
-                
+
                 <div class="title-with-badge">
                     <h2>
                         実践的なカリキュラムと<br>
@@ -61,7 +104,7 @@
                         確実にITエンジニアへ
                     </h2>
 
-                    <img class="badge-img" src="badge.svg" alt="Webエンジニア輩出No.1" >
+                    <img class="badge-img" src="badge.svg" alt="Webエンジニア輩出No.1">
                 </div>
 
 
@@ -77,9 +120,15 @@
         </div>
 
     </main>
-
-
-
 </body>
+
+<script>
+    document.querySelector('.hamburger-btn').addEventListener('click', () => {
+        document.querySelector('.header-right').classList.toggle('active');
+        document.querySelector('.hamburger-btn').classList.toggle('active');
+    });
+
+</script>
+
 
 </html>
